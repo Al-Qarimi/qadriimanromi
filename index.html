@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hamdes Webdevs</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #3a3a3a 0%, #121212 100%);
+      color: #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    nav {
+      background: #383838;
+      padding: 0.75rem 2rem;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: #fff;
+      user-select: none;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+  }
+    
+  .toggle-button {
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  .dark-mode main {
+    background: black !important;
+  }
+
+  .dark-mode nav {
+    background: #1a1a1a !important;
+  }
+
+  .dark-mode footer {
+    background: #1a1a1a !important;
+  }
+
+  .dark-mode .profile-card {
+    background: #1a1a1a !important;
+  }
+  
+  .dark-mode .profile-card:hover {
+    background: #3a3a3a;
+  }
+  
+  .dark-mode .link-button {
+    background: #bbb !important;
+    color: #222 !important;
+  }
+  
+  .dark-mode .link-button .img {
+    grayscale: 100%;
+    filter: brightness(50%) contrast(200%);
+  }
+  
+  .dark-mode .name {
+    color: #bbb;
+  }
+  
+  .dark-mode .avatar {
+    border: 1px solid #aaa;
+  }
+
+    .logo-slot {
+      width: 48px;
+      height: 48px;
+      background: #555;
+      border-radius: 8px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .logo-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 8px; 
+}
+  
+    .nav-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+    }
+
+    .nav-text .title {
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin: 0;
+      line-height: 1;
+    }
+
+    .nav-text .subtitle {
+      font-weight: 300;
+      font-size: 0.70rem;
+      margin: 0;
+      opacity: 0.75;
+      line-height: 1;
+  }
+
+    main {
+      flex: 1;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+    .container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: stretch;
+  }
+
+    .profile-card {
+      background: #3d3d3d;
+      border-radius: 15px;
+      padding: 2rem 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      text-align: center;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-10px);
+      background: #4a4a4a;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .name {
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin-bottom: 0.3rem;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+      color: #fff;
+    }
+
+    .bio {
+      font-weight: 300;
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+      color: #ddd;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: auto;
+    }
+
+    .link-button {
+      background: #e0e0e0;
+      color: #555;
+      font-weight: 600;
+      padding: 0.5rem 1.2rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .link-button:hover {
+      background: #999999;
+      color: #222;
+    }
+
+    .link-button svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+  
+    .link-button img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+
+ /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      background: #383838;
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: #fff;
+      user-select: none;
+      box-shadow: 0 -2px 6px rgba(0,0,0,0.6);
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        max-width: 100%;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .container {
+        flex-direction: row;
+        gap: 1rem;
+      }
+    }
+    
+</style>
+</head>
+
+  <body>
+  <nav>
+  <div class="logo-slot" aria-label="Logo slot" role="img">
+    <img src="LogoHamdes.jpg" alt="Logo" />
+  </div>
+  <div class="nav-text">
+    <p class="title">HWDS</p>
+    <p class="subtitle">Hamdes Web Developer Squad</p>
+  </div>
+  <img src="toggle-dark.png" alt="Toggle Background" onclick="toggleDarkMode()" class="toggle-button" />
+  </nav>
+  </nav>
+  <main>
+    <div class="container">
+
+      <!-- Person 1 -->
+      <div class="profile-card">
+        <img
+          class="avatar"
+          src="iman.png"
+          alt="Foto Muhammad Sulaiman Al Qarimi"
+        />
+        <div class="name">Muh. Sulaiman Al Q.</div>
+        <div class="bio">Saya adalah seorang siswa biasa. Saat ini saya berusia 16&nbsp;tahun. Saya memiliki hobi menggambar dan bermain game online. Pada bidang&nbsp;informatika, saya memiliki minat khusus untuk menjadi Game&nbsp;Developer secara profesional kedepannya.</div>
+        <div class="links">
+          <a
+            class="link-button"
+            href=""
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img src="internet.png" id="ikon">
+            Website Saya</a
+          >
+          <a
+            class="link-button"
+            href="https://github.com/Al-Qarimi"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><svg
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12a12 12 0 008.205 11.415c.6.112.82-.26.82-.577v-2.234c-3.338.726-4.033-1.61-4.033-1.61-.546-1.385-1.333-1.754-1.333-1.754-1.09-.745.082-.73.082-.73 1.205.086 1.84 1.24 1.84 1.24 1.07 1.834 2.807 1.304 3.492.997.108-.776.42-1.305.763-1.605-2.665-.302-5.466-1.333-5.466-5.933 0-1.31.47-2.38 1.235-3.22-.124-.303-.536-1.523.116-3.176 0 0 1.005-.322 3.3 1.23a11.49 11.49 0 016 0c2.29-1.552 3.292-1.23 3.292-1.23.653 1.653.242 2.873.12 3.176.77.84 1.234 1.91 1.234 3.22 0 4.61-2.807 5.63-5.48 5.926.43.372.81 1.1.81 2.222v3.293c0 .32.218.697.825.578A12.004 12.004 0 0024 12c0-6.63-5.37-12-12-12z"
+              />
+            </svg>
+            Profil GitHub</a
+          >
+        </div>
+      </div>
+
+      <!-- Person 2 -->
+      <div class="profile-card">
+        <img
+          class="avatar"
+          src="qadri.png"
+          alt="Foto Al Qadri Ramadhani"
+        />
+        <div class="name">Al Qadri Ramadhani</div>
+        <div class="bio">
+          Saya adalah pelajar&nbsp;terampil. Saat ini saya berusia 15&nbsp;tahun, Saya memiliki hobi bermain basket. Ketertarikan saya pada informatika cukup tinggi. Meskipun begitu, saya berniat melanjutkan pendidikan di sekolah&nbsp;pelayaran dalam negeri.
+        </div>
+        <div class="links">
+          <a
+            class="link-button"
+            href="https://sites.google.com/view/sman3takalar-id/beranda?authuser=2"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img src="internet.png">
+            Website Saya</a>
+          <a
+            class="link-button"
+            href="https://www.instagram.com/qadri_ndan?igsh=eXNycHU0eHp3cXA0"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img src="instagram.png">
+            Instagram</a
+          >
+        </div>
+      </div>
+
+      <!-- Person 3 -->
+      <div class="profile-card">
+        <img
+          class="avatar"
+          src="romi.png"
+          alt="Foto Romi Immanuel Alvaro Hasibuan"
+        />
+        <div class="name">Romi Immanuel A. H.</div>
+        <div class="bio">Saya adalah siswa di SMAN&nbsp;3&nbsp;Takalar. Saya saat ini berusia 16&nbsp;tahun, saya memiliki hobi untuk bermain game online. Saya memiliki sedikit minat pada bidang&nbsp;informatika. Saya berniat lanjut pendidikan menjadi tentara untuk kedepannya.
+        </div>
+        <div class="links">
+          <a
+            class="link-button"
+            href="https://sites.google.com/view/gameplay-rpg/halaman-muka"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img src="internet.png">
+            Website Saya</a
+          >
+          <a
+            class="link-button"
+            href="https://www.instagram.com/evos._romiryno?igsh=MWkwazA1azZvZjFjNg=="
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img src="instagram.png">
+            Instagram</a
+          >
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>© 2025 Hak Cipta HWDS.</footer>
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
+</html>
