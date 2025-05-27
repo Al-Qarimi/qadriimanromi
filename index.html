@@ -13,7 +13,7 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #3a3a3a 0%, #121212 100%);
+      background: linear-gradient(135deg, #5E548E, #9F86C0);
       color: #e0e0e0;
       display: flex;
       flex-direction: column;
@@ -21,14 +21,14 @@
     }
     
     nav {
-      background: #383838;
+      background: #e0e0e0;
       padding: 0.75rem 2rem;
       backdrop-filter: blur(8px);
       box-shadow: 0 2px 6px rgba(0,0,0,0.6);
       display: flex;
       align-items: center;
       gap: 1rem;
-      color: #fff;
+      color: #303030;
       user-select: none;
       position: sticky;
       top: 0;
@@ -37,50 +37,61 @@
       align-items: center;
   }
     
-  .toggle-button {
-    width: 26px;
-    height: 26px;
-    cursor: pointer;
-    margin-left: auto;
-  }
+    .toggle-button {
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+      margin-left: auto;
+    }
 
-  .dark-mode main {
-    background: black !important;
-  }
+    .dark-mode main {
+      background: black !important;
+    }
 
-  .dark-mode nav {
-    background: #1a1a1a !important;
-  }
+    .dark-mode nav {
+      background: #2a2a2a !important;
+      color: #e0e0e0;
+    }
 
-  .dark-mode footer {
-    background: #1a1a1a !important;
-  }
+    .dark-mode footer {
+      background: #2a2a2a !important;
+      color: #e0e0e0;
+    }
 
-  .dark-mode .profile-card {
-    background: #1a1a1a !important;
-  }
+    .dark-mode .profile-card {
+      background: #2a2a2a !important;
+    }
   
-  .dark-mode .profile-card:hover {
-    background: #3a3a3a;
-  }
+    .dark-mode .profile-card:hover {
+      background: #3a3a3a !important
+    }
   
-  .dark-mode .link-button {
-    background: #bbb !important;
-    color: #222 !important;
-  }
+    .dark-mode .bio {
+      color: #e0e0e0;
+    }
   
-  .dark-mode .link-button .img {
-    grayscale: 100%;
-    filter: brightness(50%) contrast(200%);
-  }
+    .dark-mode .link-button {
+      background: #bbb !important;
+      color: #222 !important;
+    }
   
-  .dark-mode .name {
-    color: #bbb;
-  }
+    .dark-mode .link-button .img {
+      grayscale: 100%;
+      filter: brightness(50%) contrast(200%);
+    }
   
-  .dark-mode .avatar {
-    border: 1px solid #aaa;
-  }
+    .dark-mode .name {
+      color: #ddd;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+    }
+  
+    .dark-mode .name:hover {
+      color: #fff !important;
+    }
+  
+    .dark-mode .avatar {
+      border: 1px solid #aaa;
+    }
 
     .logo-slot {
       width: 48px;
@@ -139,7 +150,7 @@
   }
 
     .profile-card {
-      background: #3d3d3d;
+      background: #e0e0e0;
       border-radius: 15px;
       padding: 2rem 1.5rem;
       margin-bottom: 2rem;
@@ -147,7 +158,7 @@
       text-align: center;
       backdrop-filter: blur(10px);
       transition: transform 0.3s ease;
-      color: #fff;
+      color: #303030;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -157,14 +168,14 @@
 
     .profile-card:hover {
       transform: translateY(-10px);
-      background: #4a4a4a;
+      background: #f9f9f9;
     }
 
     .avatar {
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      border: 1px solid #ccc;
+      border: 1px solid #303030;
       object-fit: cover;
       margin-bottom: 1rem;
       box-shadow: 0 4px 15px rgba(0,0,0,0.4);
@@ -174,15 +185,14 @@
       font-weight: 600;
       font-size: 1.5rem;
       margin-bottom: 0.3rem;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
-      color: #fff;
+      color: #303030;
     }
 
     .bio {
       font-weight: 300;
       font-size: 1rem;
       margin-bottom: 1.2rem;
-      color: #ddd;
+      color: #303030;
     }
 
     .links {
@@ -195,8 +205,8 @@
     }
 
     .link-button {
-      background: #e0e0e0;
-      color: #555;
+      background: #303030;
+      color: #e0e0e0;
       font-weight: 600;
       padding: 0.5rem 1.2rem;
       border-radius: 9999px;
@@ -209,8 +219,8 @@
     }
 
     .link-button:hover {
-      background: #999999;
-      color: #222;
+      background: #202020;
+      color: #f0f0f0;
     }
 
     .link-button svg {
@@ -229,10 +239,10 @@
     footer {
       text-align: center;
       padding: 1rem 0;
-      background: #383838;
+      background: #e0e0e0;
       font-size: 0.9rem;
       font-weight: 300;
-      color: #fff;
+      color: #303030;
       user-select: none;
       box-shadow: 0 -2px 6px rgba(0,0,0,0.6);
     }
@@ -262,7 +272,7 @@
     <p class="title">HWDS</p>
     <p class="subtitle">Hamdes Web Developer Squad</p>
   </div>
-  <img src="toggle-dark.png" alt="Toggle Background" onclick="toggleDarkMode()" class="toggle-button" />
+  <img id="darkModeIcon" src="toggle-dark.png" alt="Toggle Background" onclick="toggleDarkMode()" class="toggle-button" />
   </nav>
   </nav>
   <main>
@@ -285,14 +295,14 @@
             href="https://sites.google.com/view/sman3takalar-id/beranda?authuser=2"
             target="_blank"
             rel="noopener noreferrer"
-            ><img src="internet.png">
+            ><img src="internet-light.png" class="icon" data-light="internet-light.png" data-dark="internet-dark.png">
             Website Saya</a>
           <a
             class="link-button"
             href="https://www.instagram.com/qadri_ndan?igsh=eXNycHU0eHp3cXA0"
             target="_blank"
             rel="noopener noreferrer"
-            ><img src="instagram.png">
+            ><img src="instagram-light.png" class="icon" data-light="instagram-light.png" data-dark="instagram-dark.png">
             Instagram</a
           >
         </div>
@@ -308,20 +318,16 @@
         <div class="name">Muh. Sulaiman Al Q.</div>
         <div class="bio">Aku adalah seorang siswa biasa. Saat ini aku berusia 16&nbsp;tahun. Aku memiliki hobi menggambar dan bermain game online. Pada bidang&nbsp;informatika, aku memiliki ketertarikan pada Game&nbsp;Development karena menurutku itu keren.</div>
         <div class="links">
-          <a
-            class="link-button"
-            href="https://sites.google.com/view/rezerokara/"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><img src="internet.png" id="ikon">
-            Website Saya</a
-          >
+          <a class="link-button" href="https://sites.google.com/view/rezerokara/" target="_blank">
+         <img src="internet-light.png" class="icon" data-light="internet-light.png" data-dark="internet-dark.png">
+         Website Saya
+         </a>
           <a
             class="link-button"
             href="https://www.instagram.com/muhsulaimanalqarimi?igsh=MW1zeXh3cXM2YXphOA=="
             target="_blank"
             rel="noopener noreferrer"
-            ><img src="instagram.png">
+            ><img src="instagram-light.png" class="icon" data-light="instagram-light.png" data-dark="instagram-dark.png">
             Instagram</a
           >
         </div>
@@ -343,7 +349,7 @@
             href="https://sites.google.com/view/gameplay-rpg/halaman-muka"
             target="_blank"
             rel="noopener noreferrer"
-            ><img src="internet.png">
+            ><img src="internet-light.png" class="icon" data-light="internet-light.png" data-dark="internet-dark.png">
             Website Saya</a
           >
           <a
@@ -351,7 +357,7 @@
             href="https://www.instagram.com/evos._romiryno?igsh=MWkwazA1azZvZjFjNg=="
             target="_blank"
             rel="noopener noreferrer"
-            ><img src="instagram.png">
+            ><img src="instagram-light.png" class="icon" data-light="instagram-light.png" data-dark="instagram-dark.png">
             Instagram</a
           >
         </div>
@@ -361,8 +367,23 @@
   <footer>© 2025 Hak Cipta HWDS.</footer>
   <script>
     function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
+      const body = document.body;
+      const isDark = body.classList.toggle('dark-mode');
+
+      // Ganti ikon tombol sesuai mode
+        const icons = document.querySelectorAll('.icon');
+         icons.forEach(icon => {
+        const newSrc = isDark ? icon.dataset.dark : icon.dataset.light;
+         icon.src = newSrc;
+        });
+
+      // (Optional) Ganti ikon toggle button juga
+        const toggleIcon = document.getElementById('darkModeIcon');
+        if (toggleIcon) {
+        toggleIcon.src = isDark ? "toggle-light.png" : "toggle-dark.png";
+        toggleIcon.alt = isDark ? "Toggle Light Mode" : "Toggle Dark Mode";
+      }
     }
-  </script>
+</script>
 </body>
 </html>
